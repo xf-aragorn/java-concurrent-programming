@@ -13,6 +13,7 @@ public class Example5 {
                 .thenCompose((i)->CompletableFuture.supplyAsync(()->calc(i)))
                 .thenApply((str)->"\""+str+"\"")
                 .thenAccept(System.out::println);
-        fu.get();
+        Void instance = fu.get();
+        System.out.println("void instance: "+instance);
     }
 }

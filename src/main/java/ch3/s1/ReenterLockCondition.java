@@ -24,7 +24,7 @@ public class ReenterLockCondition implements Runnable {
         Thread t1= new Thread(r1);
         t1.start();
         Thread.sleep(2000);
-        lock.lock();
+//        lock.lock();
         condition.signal();
         lock.unlock();
     }

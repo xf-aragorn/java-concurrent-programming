@@ -6,11 +6,11 @@ public class AtomicReferenceDemo {
     static AtomicReference<Integer> money = new AtomicReference<Integer>();
     public static void main(String[] args) {
         money.set(19);
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 300; i++) {
             new Thread() {
 
                 public void run() {
-                    while(true) {
+//                    while(true) {
                         while (true) {
                             Integer m = money.get();
                             if (m < 20) {
@@ -23,7 +23,7 @@ public class AtomicReferenceDemo {
                                 break;
                             }
                         }
-                    }
+//                    }
                 }
             }.start();
         }
